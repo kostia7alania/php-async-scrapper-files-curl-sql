@@ -31,6 +31,9 @@ $urls = [ '/portyi_rf/reestr_mp.html' ];
 $s = $scraper
     ->scrape(0, ...$urls)
     ->then(function ($e) {
+        echo "<hr><hr><hr><h1 style='color: yellow'>THEN=>$e</h1><hr><hr><hr>";
+/*
+
         $ar = $e[0]->hrefs;
         $ports_sql_array = array_map(function (array $obj) {  return [ $obj[0], $obj[1] ] ; }, $ar); //array => ['url1','url2'];
 
@@ -51,7 +54,9 @@ $s = $scraper
                     foreach ($obj->hrefs as $obj2) {
                         $port_name = $obj2[0];
                         $port_href = $obj2[1]; // связываем порт с регионом
-                        preg_match('/\/\w*\/\w*\/\w*/', $port_href, $out);
+           */
+                        //preg_match('/\/\w*\/\w*\/\w*/', $port_href, $out);
+             /*
                         $regions_href = $out[0].'.html';
                         $ports_arrays[] = [$port_name, $port_href, $regions_href];
                     }
@@ -81,9 +86,9 @@ $s = $scraper
                         foreach ($obj->hrefs as $obj2) {
                             $port_name = $obj2[0];
                             $port_href = $obj2[1]; // связываем порт с регионом
-                            //preg_match('/\/\w*\/\w*\/\w*/', $port_href, $out);
+            */              //preg_match('/\/\w*\/\w*\/\w*/', $port_href, $out);
                             //$regions_href = $out[0].'.html';
-                            $docs_arrays[] = [$port_name, $port_href];
+            /*              $docs_arrays[] = [$port_name, $port_href];
                         }
                 }
             var_dump($docs_arrays); die;//array (size=67) => ['url1','url2'];
@@ -97,5 +102,7 @@ $s = $scraper
         });
         $loop->run();
 
+
+        */
     });
 $loop->run(); 
