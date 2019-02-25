@@ -12,14 +12,12 @@ use React\Promise\PromiseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
 final class Scraper
-{
-    private $sel;
+{ 
     private $browser;
     private $URL = 'http://www.morflot.ru';
 
-    public function __construct(string $sel, Browser $browser)
-    {
-        $this->sel = $sel;
+    public function __construct(Browser $browser)
+    { 
         $this->browser = $browser;
     }
     

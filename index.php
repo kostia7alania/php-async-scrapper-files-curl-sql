@@ -3,9 +3,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 echo date('Y-m-d H:i:s');
 $loop = \React\EventLoop\Factory::create();
-$sel = '.menu_test>ul>li>a';
 $browser = new \Clue\React\Buzz\Browser($loop);
-$scraper = new \AsyncScraper\Scraper($sel, $browser);
+$scraper = new \AsyncScraper\Scraper($browser);
 
 // PDO ////// TRUNCATE TABLE [Regions]
 // автомат дата = ALTER TABLE Regions ADD CONSTRAINT DF_Regions DEFAULT GETDATE() FOR Date
